@@ -36,6 +36,12 @@
         map: map,
         title:lbl
     }); 
+    var info = new google.maps.InfoWindow({
+        content: lbl
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+      info.open(map,marker);
+    });
   }
 </script> 
 </head> 
