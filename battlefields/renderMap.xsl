@@ -13,7 +13,8 @@
           <xsl:for-each select="rs:results/rs:result">
 <xsl:variable name="lat" select="rs:binding[@name = 'lat']" />
 <xsl:variable name="long" select="rs:binding[@name = 'long']" />
-<xsl:text>markPoint(</xsl:text><xsl:value-of select="$lat" />, <xsl:value-of select="$long" />, map, "my point");
+<xsl:variable name="label" select="rs:binding[@name = 'label']" />
+<xsl:text>markPoint(</xsl:text><xsl:value-of select="$lat" />, <xsl:value-of select="$long" />, map, <xsl:value-of select="$label" />);
           </xsl:for-each>
   }
 </script> 
