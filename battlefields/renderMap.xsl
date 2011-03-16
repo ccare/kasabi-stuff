@@ -11,9 +11,9 @@
 <script type="text/javascript"> 
   function markPoints(map) {
           <xsl:for-each select="rs:results/rs:result">
-<xsl:variable name="lat" select="rs:binding[@name = 'lat']/literal" />
-<xsl:variable name="long" select="rs:binding[@name = 'long']/literal" />
-<xsl:variable name="label" select="rs:binding[@name = 'label']/literal" />
+<xsl:variable name="lat" select="rs:binding[@name = 'lat']/rs:literal" />
+<xsl:variable name="long" select="rs:binding[@name = 'long']/rs:literal" />
+<xsl:variable name="label" select="rs:binding[@name = 'label']/rs:literal" />
 <xsl:text>markPoint(</xsl:text><xsl:value-of select="$lat" />, <xsl:value-of select="$long" />, map, "<xsl:value-of select="$label" />");
           </xsl:for-each>
   }
